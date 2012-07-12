@@ -1,0 +1,14 @@
+0	[R] prediction = BinaryPrediction. p(1)= -12.749460048194328
+1	[R.0] Splitter = InequalitySplitter. win_LeftRight_width_20_height_10_pos_0_0 < 177.0
+1	[R.0:0] prediction = BinaryPrediction. p(1)= -2.004376634962274
+1	[R.0:1] prediction = BinaryPrediction. p(1)= -2.3567817736620276
+2	[R.1] Splitter = InequalitySplitter. win_LeftRight_width_20_height_10_pos_180_20 < 3048.5
+2	[R.1:0] prediction = BinaryPrediction. p(1)= -1.338593393492093
+2	[R.1:1] prediction = BinaryPrediction. p(1)= -0.6200385657309491
+3	[R.2] Splitter = InequalitySplitter. win_LeftRight_width_20_height_10_pos_20_0 < -393.5
+3	[R.2:0] prediction = BinaryPrediction. p(1)= -0.8486933874746179
+3	[R.2:1] prediction = BinaryPrediction. p(1)= -1.2644752669813994
+4	[R.3] Splitter = InequalitySplitter. win_LeftRight_width_20_height_10_pos_160_40 < 403.0
+4	[R.3:0] prediction = BinaryPrediction. p(1)= -1.376837492407414
+4	[R.3:1] prediction = BinaryPrediction. p(1)= -0.41640583184316987
+

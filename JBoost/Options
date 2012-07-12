@@ -1,0 +1,98 @@
+-S D:\Linux\jboost-2.2\demo\spambase
+
+jboost Version: 2.2
+
+******** Config Options:
+
+  -p N       Specify number of threads (default: 1)
+  -CONFIG    The name of the configuration file (default "jboost.config")
+             All options can be specified in this file instead of
+             on the command line.
+  -V         Print version and exit
+
+******** Data File Options:
+
+  -S stem        Base (stem) name for the files (default: "data")
+  -n file.spec   Specfile name (default: stem+".spec")
+  -t file.train  Training file name (default: stem+".train")
+  -T file.test   Test file name (default: stem+".test")
+  -serialTreeInput file.tree    Java object output of adtree (can be loaded
+                                at a later date)
+  -weightThreshold T    Set threshold for accepting an example
+
+******** Boosting Options:
+
+  -b type   The type of booster to use (default: AdaBoost).
+            AdaBoost     Loss function: exp(-margin)
+            LogLossBoost Loss: log(1 + exp(-margin))
+            RobustBoost  Loss: min(1,1-erf((margin - mu(time))/sigma(time)))
+  -numRounds N  The number of rounds of boosting that are to be executed.
+                This option should be used with AdaBoost and LogitBoost
+  -ATreeType type   The type of ATree to create.  There are several options:
+     ADD_ALL               Create a full ADTree (default)
+     ADD_ROOT              Add splits only at the root producing a glat tree.
+                           This is equivalent to boosting decision stumps
+     ADD_SINGLES           Create a decision tree
+     ADD_ROOT_OR_SINGLES   Create a linear combination of decision trees.
+                             This is equivalent to simultaneously growing 
+                             boosted decision trees.
+  -BoosTexter           Only make a zero prediction at the root node.
+  -booster_smooth sf   Smoothing factor for prediction computation
+                       (default: 0.5) Described Schapire & Singer 1999
+                       (smoothing the predictions), 
+                       $epsilon = sf / total_num_examples$  
+
+******** RobustBoost Options:
+
+  -rb_time       NUM          See documentation.
+  -rb_epsilon    NUM          See documentation.
+  -rb_theta      NUM          See documentation.
+  -rb_theta_0    NUM          See documentation.
+  -rb_theta_1    NUM          See documentation.
+  -rb_sigma_f    NUM          See documentation.
+  -rb_sigma_f_0  NUM          See documentation.
+  -rb_sigma_f_1  NUM          See documentation.
+  -rb_cost_0     NUM          See documentation.
+  -rb_cost_1     NUM          See documentation.
+  -rb_potentialSlack   NUM    See documentation.
+
+******** BrownBoost Options:
+
+  -bb_time       NUM          See documentation.
+  -bb_epsilon    NUM          See documentation.
+  -bb_theta      NUM          See documentation.
+  -bb_theta_0    NUM          See documentation.
+  -bb_theta_1    NUM          See documentation.
+  -bb_cost_0     NUM          See documentation.
+  -bb_cost_1     NUM          See documentation.
+  -bb_potentialSlack   NUM    See documentation.
+
+******** Output Options:
+
+  -O file.tree   Output tree file name (default: stem+".output.tree")
+  -serialTreeOutput file.tree   Java object output of adtree (can be loaded
+                                at a later date)
+  -P filename    Output Python code file name (default: stem+".output.py"
+  -j filename    Output java code file name (default: stem+".output.java"
+  -c filename    Output C code file name (default: stem+".output.c")
+  -m filename    Output matlab code file name (default: stem+".output.java"
+  -cOutputProc name  Name of procedure for output C code (default: 'predict')
+  -javaStandAlone    Output java code that can stand alone, but
+                     cannot read jboost-format data
+  -javaOutputClass name     Name of class for output java code
+                                          (default: 'Predict')
+  -javaOutputMethod name    Name of method for output java code
+                                          (default: 'predict')
+
+******** Logging Options:
+
+  -info filename      High-level log file name (default: stem+".info")
+  -log  filename      Debugging log (default stem+".log")
+  -loglevel N   Amount of information to be output to log 
+                The larger N is, the more information will be output.
+                This is meant to be used as a debugging tool.
+  -a iter      Generate margin (score) logs 
+               iter>0   log only on iteration iter,
+               iter=-1  log on iters 1,2..9,10,20,...,90,100,200 ...)
+               iter=-2  log on all iterations
+               iter=-3  log only on the last iteration of boosting
